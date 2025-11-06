@@ -343,6 +343,8 @@ impl Tm
 		// Change to Days
 		epoch /= 24;
 		
+		// https://www.benjoffe.com/fast-date
+		// Start Algorithm
 		// 365 days * 1969 + 0-1969 + 477 leap years
 		let epoch_shift:u64 = 719162;
 		 
@@ -383,6 +385,7 @@ impl Tm
 		
 		//  Compiler optimises to branch-free
 		let mut tm_mon:u64 = if bump{ m - 12 } else { m };
+		//End Algorithm
 		
 		// Tm months are 0-11
 		tm_mon -= 1;
