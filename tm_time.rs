@@ -382,8 +382,9 @@ impl Tm
 		let tm_mday:u64 = d + 1;  
 		
 		//  Compiler optimises to branch-free
-		let mut tm_mon:u64 = if bump{ m - 12 } else { m };           
-
+		let mut tm_mon:u64 = if bump{ m - 12 } else { m };
+		
+		// Tm months are 0-11
 		tm_mon -= 1;
 		
 		tm_year += if bump { 1 }else { 0 };
